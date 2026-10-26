@@ -1,0 +1,145 @@
+# ---------------------------------------------------------------------------
+# 站点基础配置
+# 文档：https://gohugo.io/configuration/all/
+# ---------------------------------------------------------------------------
+baseURL = "https://moony-hub.github.io/"
+title = "Moony"
+theme = "hugo-theme-stack"
+
+# 语言：站点正文以简体中文为主
+defaultContentLanguage = "zh"
+locale = "zh-CN"
+hasCJKLanguage = true
+timeZone = "Asia/Shanghai"
+
+enableRobotsTXT = true
+summaryLength = 120
+
+# 首页 / 列表页每页文章数
+[pagination]
+  pagerSize = 8
+
+# 文章与独立页面的固定链接
+[permalinks]
+  post = "/p/:slug/"
+  page = "/:slug/"
+
+# ---------------------------------------------------------------------------
+# 主题参数
+# ---------------------------------------------------------------------------
+[params]
+  description = "网络安全 · 渗透测试 · 学习记录"
+  mainSections = ["post"]
+  rssFullContent = true
+  favicon = "img/avatar.png"
+
+  [params.footer]
+    since = 2026
+    customText = "记录那些值得回看的抓包与笔记"
+
+  [params.dateFormat]
+    published = "2006-01-02"
+    lastUpdated = "2006-01-02"
+
+  [params.sidebar]
+    compact = false
+    avatar = "img/avatar.png"
+    emoji = "🌙"
+    subtitle = "网络安全 · 渗透测试 · 学习记录"
+
+  [params.article]
+    toc = true
+    readingTime = true
+    math = false
+    headingAnchor = true
+
+    [params.article.license]
+      enabled = true
+      default = "本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议，转载请注明出处。"
+
+    [params.article.list]
+      showTags = true
+
+  [params.widgets]
+    homepage = [
+      { type = "search" },
+      { type = "archives", params = { limit = 6 } },
+      { type = "categories", params = { limit = 8 } },
+      { type = "tag-cloud", params = { limit = 15 } },
+    ]
+    page = [{ type = "toc" }]
+
+  [params.colorScheme]
+    toggle = true
+    default = "auto"
+
+  [params.opengraph.twitter]
+    site = ""
+    card = "summary_large_image"
+
+  [params.imageProcessing]
+    autoOrient = false
+
+    [params.imageProcessing.content]
+      widths = [800, 1600, 2400]
+      enabled = true
+
+    [params.imageProcessing.thumbnail]
+      enabled = true
+
+    [params.imageProcessing.external]
+      timeout = "5s"
+
+  # 评论：暂未开启。以后可换成 giscus / waline / utterances 等
+  [params.comments]
+    enabled = false
+    provider = "giscus"
+
+# ---------------------------------------------------------------------------
+# 侧边栏图标（社交链接）
+# ---------------------------------------------------------------------------
+[[menu.social]]
+  identifier = "github"
+  name = "GitHub"
+  url = "https://github.com/moony-hub"
+  [menu.social.params]
+    icon = "brand-github"
+    newTab = true
+
+[[menu.social]]
+  identifier = "rss"
+  name = "RSS"
+  url = "/index.xml"
+  [menu.social.params]
+    icon = "rss"
+    newTab = true
+
+# ---------------------------------------------------------------------------
+# Markdown 渲染
+# ---------------------------------------------------------------------------
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["\\[", "\\]"], ["$$", "$$"]]
+          inline = [["\\(", "\\)"]]
+    [markup.goldmark.renderer]
+      # 允许在 Markdown 中直接写 HTML
+      unsafe = true
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = false
+    tabWidth = 4

@@ -1,0 +1,16 @@
+﻿# Hugo build output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# local
+hugo.exe
+
+# Hugo/TS 生成物
+assets/jsconfig.json
