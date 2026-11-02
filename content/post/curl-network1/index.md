@@ -51,7 +51,7 @@ curl [https://www.baidu.com](https://www.baidu.com)
 
 效果：
 终端直接输出百度首页的完整 HTML 源代码。
-
+![curl基础请求](curl.png)
 原理：
 curl 向百度服务器发起 HTTP GET 请求，服务器接收请求后返回网页源码，终端直接打印原始数据。
 
@@ -69,7 +69,7 @@ curl -I [https://www.baidu.com](https://www.baidu.com)
 - 响应状态码 `200 OK`（请求成功）
 - 服务器类型、缓存机制
 - 页面编码、跳转策略
-
+![curl -I 查看响应头](curl-I.png)
 该实验可以直观验证：**正常网站 HTTPS 服务在线、端口正常、服务响应稳定**。
 
 ## 五、实操三：详细模式分析完整网络流程
@@ -78,7 +78,7 @@ curl -I [https://www.baidu.com](https://www.baidu.com)
 ```bash
 curl -v [https://www.baidu.com](https://www.baidu.com)
 ```
-
+![curl -v 详细模式](curl-v.png)
 `-v` 详细模式可以完整展示一次 HTTPS 访问的全过程：
 1. DNS 解析域名
 2. 建立 TCP 连接
