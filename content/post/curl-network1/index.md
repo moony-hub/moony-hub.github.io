@@ -1,7 +1,7 @@
 ---
 title: "网络命令行调试：curl 协议请求与网络分析实验"
 date: 2026-11-02
-slug: curl-network-experiment
+slug: curl-network1
 description: "使用 curl 命令完成 HTTP/HTTPS 请求实验，通过参数查看请求头、响应头、完整交互流程，理解网页访问、TCP、HTTPS 网络通信原理。"
 categories:
     - 网络安全
