@@ -87,7 +87,7 @@ id
 
 成功返回 `uid=0(root)`，代表获取服务器最高 root 权限，可任意执行系统命令。
 ![连接6200端口拿到root shell](vsftpd-get-rootshell.png)
-
+![nmap扫描靶机端口服务](vsftpd-nmap-scan.png)
 ## 六、漏洞成因分析
 
 vsftpd 2.3.4 当时流传的恶意安装包被篡改，植入后门逻辑；
