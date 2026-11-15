@@ -9,7 +9,6 @@ tags:
     - Pikachu
     - Burp Suite
     - 暴力破解
-image: cover.png
 ---
 
 这篇文章记录了一次完整的本地练习过程：搭好 Pikachu 靶场，装好 Burp Suite 社区版，然后把暴力破解模块的四道关卡依次打完。内容全部在本地 localhost 环境下完成。
