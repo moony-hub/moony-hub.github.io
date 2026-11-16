@@ -22,7 +22,7 @@ image: cover.png
 
 ## 一、第一现场
 
-![任务管理器：ea2fc7e8.exe 占用 68.5% CPU](images/01-taskmanager-84cpu.png)
+![任务管理器：ea2fc7e8.exe 占用 68.5% CPU](01-taskmanager-84cpu.png)
 
 ```
 ea2fc7e8.exe        68.5%  2,115.7 MB
@@ -191,7 +191,7 @@ C:\Users\n2263\Documents
 
 清理时踩了个坑——桌面上放隔离文件夹，删不掉：
 
-![权限拒绝](images/03-access-denied.png)
+![权限拒绝](03-access-denied.png)
 
 ACL 显示当前用户和 Administrators 都是完全控制，但所有删除操作都返回"拒绝访问"。原因是 `WdFilter` 这个文件系统过滤驱动：Defender 把文件判定为威胁后，会在内核层锁住它，防止执行或篡改。
 
@@ -234,7 +234,7 @@ Remove-MpPreference -ExclusionPath 'C:\'
 
 再翻 Edge 的下载数据库（`History` 是个 SQLite，`downloads` 表里有完整来源）：
 
-![浏览器下载记录](images/06-browser-downloads.png)
+![浏览器下载记录](06-browser-downloads.png)
 
 ```
 target: D:\edge\deepsk_x64.in.03.zip
@@ -263,7 +263,7 @@ url: https://deepseeek.org/go/event?type=download&t=...
 
 用户搜索"deepseek 官网"，点了 Bing 广告位的假站，下载了一个 3.3 MB 的"安装包"——真正的桌面版有 289 MB，这个体积只够装一个投递器。
 
-![下载记录显示两个 zip 都已删除](images/05-zip-deleted.png)
+![下载记录显示两个 zip 都已删除](05-zip-deleted.png)
 
 ## 九、静态分析：加壳、PNG 容器与 C2
 
